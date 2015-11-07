@@ -27,6 +27,20 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Menu = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        AddIngre = new javax.swing.JLabel();
+        EditIngre = new javax.swing.JLabel();
+        RemoveIngre = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        Cellar = new javax.swing.JDialog();
+        jPanel3 = new javax.swing.JPanel();
+        AddIng = new javax.swing.JLabel();
+        EditIng = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         cellar = new javax.swing.JLabel();
@@ -36,6 +50,75 @@ public class Home extends javax.swing.JFrame {
         meramera = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+
+        jPanel2.setLayout(null);
+
+        AddIngre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/NewDish.png"))); // NOI18N
+        jPanel2.add(AddIngre);
+        AddIngre.setBounds(30, 40, 174, 40);
+
+        EditIngre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/EditDish.png"))); // NOI18N
+        jPanel2.add(EditIngre);
+        EditIngre.setBounds(30, 100, 174, 40);
+
+        RemoveIngre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/DeleteDish.png"))); // NOI18N
+        jPanel2.add(RemoveIngre);
+        RemoveIngre.setBounds(30, 160, 174, 40);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconDish.png"))); // NOI18N
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(220, -10, 280, 260);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/black1926.jpg"))); // NOI18N
+        jLabel7.setToolTipText("");
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(0, 0, 490, 250);
+
+        javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu.getContentPane());
+        Menu.getContentPane().setLayout(MenuLayout);
+        MenuLayout.setHorizontalGroup(
+            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        MenuLayout.setVerticalGroup(
+            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jPanel3.setLayout(null);
+
+        AddIng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/AddIngredient.png"))); // NOI18N
+        jPanel3.add(AddIng);
+        AddIng.setBounds(310, 40, 230, 40);
+
+        EditIng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/EditIngredient.png"))); // NOI18N
+        jPanel3.add(EditIng);
+        EditIng.setBounds(310, 110, 230, 40);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/RemoveIngredient.png"))); // NOI18N
+        jPanel3.add(jLabel8);
+        jLabel8.setBounds(310, 180, 240, 40);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconIngridient.png"))); // NOI18N
+        jPanel3.add(jLabel9);
+        jLabel9.setBounds(-80, 0, 370, 260);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/black1926.jpg"))); // NOI18N
+        jPanel3.add(jLabel5);
+        jLabel5.setBounds(0, 0, 590, 260);
+
+        javax.swing.GroupLayout CellarLayout = new javax.swing.GroupLayout(Cellar.getContentPane());
+        Cellar.getContentPane().setLayout(CellarLayout);
+        CellarLayout.setHorizontalGroup(
+            CellarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
+        );
+        CellarLayout.setVerticalGroup(
+            CellarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CellarLayout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -127,12 +210,26 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AddIng;
+    private javax.swing.JLabel AddIngre;
+    private javax.swing.JDialog Cellar;
+    private javax.swing.JLabel EditIng;
+    private javax.swing.JLabel EditIngre;
+    private javax.swing.JDialog Menu;
+    private javax.swing.JLabel RemoveIngre;
     private javax.swing.JLabel cellar;
     private javax.swing.JLabel food;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel menu;
     private javax.swing.JLabel meramera;
     private javax.swing.JLabel order;

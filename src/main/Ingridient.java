@@ -5,7 +5,6 @@ public class Ingridient {
     
     private String name;
     private String description;
-    private Pila ingredients;
     
     
     public Ingridient(String name, String description){
@@ -28,6 +27,8 @@ public class Ingridient {
     public void setDescription(String description) {
         this.description = description;
     }
+    
+    
     
     
     
