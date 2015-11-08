@@ -15,7 +15,7 @@ public class Pila {
        raiz = null;
    }
    
-   public void push(int x){
+   public void push(Object x){
        Nodo nuevo;
        nuevo = new Nodo();
        nuevo.data = x;
