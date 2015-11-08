@@ -394,7 +394,7 @@ public class Home extends javax.swing.JFrame {
         meramera.setForeground(new java.awt.Color(255, 255, 255));
         meramera.setText("La Mera Mera ");
         jPanel1.add(meramera);
-        meramera.setBounds(320, 40, 260, 42);
+        meramera.setBounds(320, 40, 260, 43);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/links.png"))); // NOI18N
         jPanel1.add(jLabel4);
@@ -494,6 +494,8 @@ public class Home extends javax.swing.JFrame {
     private void AgregarIngrediente(java.awt.event.MouseEvent evt){
         ingredientes.push(new Ingridient("String","String2"));
     }
+    
+    
   
     
     /**
