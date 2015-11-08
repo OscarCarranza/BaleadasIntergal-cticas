@@ -56,30 +56,102 @@ public class Home extends javax.swing.JFrame {
         AddDish = new javax.swing.JDialog();
         jPanel5 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        tf_dishName = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        tf_inameDesc = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        ingredients_dish = new javax.swing.JComboBox();
+        sp_timedish = new javax.swing.JSpinner();
+        jLabel32 = new javax.swing.JLabel();
+        sp_pricedish = new javax.swing.JSpinner();
         jLabel13 = new javax.swing.JLabel();
         EditDish = new javax.swing.JDialog();
         jPanel6 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        Dish_tableIngredients = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        EditselectDish = new javax.swing.JComboBox();
+        Editingredients_dish = new javax.swing.JComboBox();
+        Editsp_timedish = new javax.swing.JSpinner();
+        jLabel36 = new javax.swing.JLabel();
+        Editsp_pricedish = new javax.swing.JSpinner();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        Edittf_Desc = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        Edittf_dishName = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         DeleteDish = new javax.swing.JDialog();
         jPanel7 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        DeleteselectDish = new javax.swing.JComboBox();
         jLabel18 = new javax.swing.JLabel();
         AddOrder = new javax.swing.JDialog();
         jPanel8 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        tf_inameDesc1 = new javax.swing.JTextField();
+        tf_dishName1 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        sp_timedish1 = new javax.swing.JSpinner();
+        sp_pricedish1 = new javax.swing.JSpinner();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        ingredients_dish1 = new javax.swing.JComboBox();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
         EditOrder = new javax.swing.JDialog();
         jPanel9 = new javax.swing.JPanel();
+        Order_remDish = new javax.swing.JComboBox();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        EditselectOrder = new javax.swing.JComboBox();
         jLabel21 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        tf_clientOrderE = new javax.swing.JTextField();
+        jLabel55 = new javax.swing.JLabel();
+        Order_addDish = new javax.swing.JComboBox();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jLabel56 = new javax.swing.JLabel();
+        sp_pricedish2 = new javax.swing.JSpinner();
+        jLabel57 = new javax.swing.JLabel();
+        sp_timedish2 = new javax.swing.JSpinner();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         DeleteOrder = new javax.swing.JDialog();
         jPanel10 = new javax.swing.JPanel();
+        jLabel53 = new javax.swing.JLabel();
+        DeleteselectDish1 = new javax.swing.JComboBox();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         NewIngredient = new javax.swing.JDialog();
         jPanel11 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
+        tf_ingName = new javax.swing.JTextField();
+        tf_ingDesc = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -200,12 +272,53 @@ public class Home extends javax.swing.JFrame {
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/Top1.png"))); // NOI18N
         jPanel5.add(jLabel14);
-        jLabel14.setBounds(20, 10, 580, 80);
+        jLabel14.setBounds(20, 20, 511, 80);
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconListIng.png"))); // NOI18N
+        jPanel5.add(jLabel12);
+        jLabel12.setBounds(70, 290, 140, 29);
+        jPanel5.add(tf_dishName);
+        tf_dishName.setBounds(220, 130, 210, 30);
+
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconTime.png"))); // NOI18N
+        jPanel5.add(jLabel27);
+        jLabel27.setBounds(150, 250, 60, 30);
+        jPanel5.add(tf_inameDesc);
+        tf_inameDesc.setBounds(220, 170, 210, 30);
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconName.png"))); // NOI18N
+        jPanel5.add(jLabel30);
+        jLabel30.setBounds(130, 130, 80, 29);
+
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconDesc.png"))); // NOI18N
+        jPanel5.add(jLabel31);
+        jLabel31.setBounds(70, 170, 140, 30);
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/accept.png"))); // NOI18N
+        jPanel5.add(jLabel28);
+        jLabel28.setBounds(130, 350, 130, 40);
+
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/cancel.png"))); // NOI18N
+        jLabel29.setToolTipText("");
+        jPanel5.add(jLabel29);
+        jLabel29.setBounds(280, 350, 121, 40);
+
+        ingredients_dish.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel5.add(ingredients_dish);
+        ingredients_dish.setBounds(220, 290, 210, 30);
+        jPanel5.add(sp_timedish);
+        sp_timedish.setBounds(220, 250, 70, 30);
+
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconPrice.png"))); // NOI18N
+        jPanel5.add(jLabel32);
+        jLabel32.setBounds(140, 210, 69, 30);
+        jPanel5.add(sp_pricedish);
+        sp_pricedish.setBounds(220, 210, 110, 30);
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/black1926.jpg"))); // NOI18N
         jLabel13.setToolTipText("");
         jPanel5.add(jLabel13);
-        jLabel13.setBounds(0, 0, 530, 300);
+        jLabel13.setBounds(0, 0, 530, 440);
 
         javax.swing.GroupLayout AddDishLayout = new javax.swing.GroupLayout(AddDish.getContentPane());
         AddDish.getContentPane().setLayout(AddDishLayout);
@@ -215,19 +328,93 @@ public class Home extends javax.swing.JFrame {
         );
         AddDishLayout.setVerticalGroup(
             AddDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(AddDishLayout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel6.setLayout(null);
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/Top3.png"))); // NOI18N
         jPanel6.add(jLabel15);
-        jLabel15.setBounds(20, 10, 580, 80);
+        jLabel15.setBounds(20, 20, 510, 80);
+
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/cancel.png"))); // NOI18N
+        jLabel33.setToolTipText("");
+        jPanel6.add(jLabel33);
+        jLabel33.setBounds(280, 460, 121, 40);
+
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/accept.png"))); // NOI18N
+        jPanel6.add(jLabel34);
+        jLabel34.setBounds(130, 460, 130, 40);
+
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconListIng.png"))); // NOI18N
+        jPanel6.add(jLabel35);
+        jLabel35.setBounds(90, 310, 140, 29);
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Ingridient", "Description"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        Dish_tableIngredients.setViewportView(jTable3);
+
+        jPanel6.add(Dish_tableIngredients);
+        Dish_tableIngredients.setBounds(90, 350, 360, 80);
+
+        EditselectDish.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel6.add(EditselectDish);
+        EditselectDish.setBounds(250, 110, 160, 30);
+
+        Editingredients_dish.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel6.add(Editingredients_dish);
+        Editingredients_dish.setBounds(240, 310, 170, 30);
+        jPanel6.add(Editsp_timedish);
+        Editsp_timedish.setBounds(240, 270, 70, 30);
+
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconTime.png"))); // NOI18N
+        jPanel6.add(jLabel36);
+        jLabel36.setBounds(170, 270, 60, 30);
+        jPanel6.add(Editsp_pricedish);
+        Editsp_pricedish.setBounds(240, 230, 110, 30);
+
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconPrice.png"))); // NOI18N
+        jPanel6.add(jLabel37);
+        jLabel37.setBounds(160, 230, 69, 30);
+
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconDesc.png"))); // NOI18N
+        jPanel6.add(jLabel38);
+        jLabel38.setBounds(90, 190, 140, 30);
+        jPanel6.add(Edittf_Desc);
+        Edittf_Desc.setBounds(240, 190, 210, 30);
+
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconName.png"))); // NOI18N
+        jPanel6.add(jLabel39);
+        jLabel39.setBounds(150, 150, 80, 29);
+        jPanel6.add(Edittf_dishName);
+        Edittf_dishName.setBounds(240, 150, 210, 30);
+
+        jLabel40.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 30)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(51, 255, 0));
+        jLabel40.setText("Select Dish");
+        jPanel6.add(jLabel40);
+        jLabel40.setBounds(100, 110, 170, 30);
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/black1926.jpg"))); // NOI18N
         jLabel16.setToolTipText("");
         jPanel6.add(jLabel16);
-        jLabel16.setBounds(0, 0, 530, 300);
+        jLabel16.setBounds(0, 0, 530, 530);
 
         javax.swing.GroupLayout EditDishLayout = new javax.swing.GroupLayout(EditDish.getContentPane());
         EditDish.getContentPane().setLayout(EditDishLayout);
@@ -237,19 +424,45 @@ public class Home extends javax.swing.JFrame {
         );
         EditDishLayout.setVerticalGroup(
             EditDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(EditDishLayout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel7.setLayout(null);
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/Top2.png"))); // NOI18N
         jPanel7.add(jLabel17);
-        jLabel17.setBounds(20, 10, 580, 80);
+        jLabel17.setBounds(20, 20, 580, 80);
+
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/accept.png"))); // NOI18N
+        jPanel7.add(jLabel44);
+        jLabel44.setBounds(120, 180, 130, 40);
+
+        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/cancel.png"))); // NOI18N
+        jLabel45.setToolTipText("");
+        jPanel7.add(jLabel45);
+        jLabel45.setBounds(270, 180, 121, 40);
+
+        jLabel46.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 30)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(51, 255, 0));
+        jLabel46.setText("Select Dish");
+        jPanel7.add(jLabel46);
+        jLabel46.setBounds(100, 120, 170, 30);
+
+        DeleteselectDish.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        DeleteselectDish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteselectDishActionPerformed(evt);
+            }
+        });
+        jPanel7.add(DeleteselectDish);
+        DeleteselectDish.setBounds(250, 120, 160, 30);
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/black1926.jpg"))); // NOI18N
         jLabel18.setToolTipText("");
         jPanel7.add(jLabel18);
-        jLabel18.setBounds(0, 0, 530, 300);
+        jLabel18.setBounds(0, 0, 530, 260);
 
         javax.swing.GroupLayout DeleteDishLayout = new javax.swing.GroupLayout(DeleteDish.getContentPane());
         DeleteDish.getContentPane().setLayout(DeleteDishLayout);
@@ -259,19 +472,81 @@ public class Home extends javax.swing.JFrame {
         );
         DeleteDishLayout.setVerticalGroup(
             DeleteDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jPanel8.setLayout(null);
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Dish", "Price"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel8.add(jScrollPane1);
+        jScrollPane1.setBounds(70, 240, 390, 90);
+
+        jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconNumber.png"))); // NOI18N
+        jPanel8.add(jLabel50);
+        jLabel50.setBounds(107, 120, 103, 29);
+
+        jLabel51.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconClient.png"))); // NOI18N
+        jPanel8.add(jLabel51);
+        jLabel51.setBounds(130, 160, 80, 30);
+        jPanel8.add(tf_inameDesc1);
+        tf_inameDesc1.setBounds(220, 160, 210, 30);
+        jPanel8.add(tf_dishName1);
+        tf_dishName1.setBounds(220, 120, 210, 30);
+
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/Top4.png"))); // NOI18N
         jPanel8.add(jLabel19);
-        jLabel19.setBounds(0, 10, 520, 80);
+        jLabel19.setBounds(0, 20, 520, 80);
+        jPanel8.add(sp_timedish1);
+        sp_timedish1.setBounds(360, 340, 70, 30);
+        jPanel8.add(sp_pricedish1);
+        sp_pricedish1.setBounds(190, 340, 70, 30);
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/black1926.jpg"))); // NOI18N
-        jLabel20.setToolTipText("");
-        jPanel8.add(jLabel20);
-        jLabel20.setBounds(0, 0, 530, 300);
+        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconTotal.png"))); // NOI18N
+        jPanel8.add(jLabel43);
+        jLabel43.setBounds(100, 340, 80, 30);
+
+        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/dish.png"))); // NOI18N
+        jPanel8.add(jLabel47);
+        jLabel47.setBounds(100, 200, 110, 29);
+
+        jLabel52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconTime.png"))); // NOI18N
+        jPanel8.add(jLabel52);
+        jLabel52.setBounds(290, 340, 60, 30);
+
+        ingredients_dish1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel8.add(ingredients_dish1);
+        ingredients_dish1.setBounds(220, 200, 210, 30);
+
+        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/accept.png"))); // NOI18N
+        jPanel8.add(jLabel48);
+        jLabel48.setBounds(130, 410, 130, 40);
+
+        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/cancel.png"))); // NOI18N
+        jLabel49.setToolTipText("");
+        jPanel8.add(jLabel49);
+        jLabel49.setBounds(280, 410, 121, 40);
+
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/black1926.jpg"))); // NOI18N
+        jLabel41.setToolTipText("");
+        jPanel8.add(jLabel41);
+        jLabel41.setBounds(0, 0, 530, 500);
 
         javax.swing.GroupLayout AddOrderLayout = new javax.swing.GroupLayout(AddOrder.getContentPane());
         AddOrder.getContentPane().setLayout(AddOrderLayout);
@@ -281,19 +556,100 @@ public class Home extends javax.swing.JFrame {
         );
         AddOrderLayout.setVerticalGroup(
             AddOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(AddOrderLayout.createSequentialGroup()
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel9.setLayout(null);
 
+        Order_remDish.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel9.add(Order_remDish);
+        Order_remDish.setBounds(220, 230, 210, 30);
+
+        jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/dishR.png"))); // NOI18N
+        jPanel9.add(jLabel60);
+        jLabel60.setBounds(70, 230, 140, 29);
+
+        jLabel42.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 30)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(51, 255, 0));
+        jLabel42.setText("Select Order");
+        jPanel9.add(jLabel42);
+        jLabel42.setBounds(100, 110, 170, 30);
+
+        EditselectOrder.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        EditselectOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditselectOrderActionPerformed(evt);
+            }
+        });
+        jPanel9.add(EditselectOrder);
+        EditselectOrder.setBounds(270, 110, 150, 30);
+
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/Top6.png"))); // NOI18N
         jPanel9.add(jLabel21);
-        jLabel21.setBounds(0, 10, 510, 80);
+        jLabel21.setBounds(0, 20, 510, 80);
+
+        jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconClient.png"))); // NOI18N
+        jPanel9.add(jLabel54);
+        jLabel54.setBounds(130, 150, 80, 30);
+        jPanel9.add(tf_clientOrderE);
+        tf_clientOrderE.setBounds(220, 150, 210, 30);
+
+        jLabel55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/dish.png"))); // NOI18N
+        jPanel9.add(jLabel55);
+        jLabel55.setBounds(100, 190, 110, 29);
+
+        Order_addDish.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel9.add(Order_addDish);
+        Order_addDish.setBounds(220, 190, 210, 30);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Dish", "Price"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable2);
+
+        jPanel9.add(jScrollPane2);
+        jScrollPane2.setBounds(70, 280, 390, 90);
+
+        jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconTotal.png"))); // NOI18N
+        jPanel9.add(jLabel56);
+        jLabel56.setBounds(100, 380, 80, 30);
+        jPanel9.add(sp_pricedish2);
+        sp_pricedish2.setBounds(190, 380, 70, 30);
+
+        jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconTime.png"))); // NOI18N
+        jPanel9.add(jLabel57);
+        jLabel57.setBounds(290, 380, 60, 30);
+        jPanel9.add(sp_timedish2);
+        sp_timedish2.setBounds(360, 380, 70, 30);
+
+        jLabel58.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/accept.png"))); // NOI18N
+        jPanel9.add(jLabel58);
+        jLabel58.setBounds(130, 430, 130, 40);
+
+        jLabel59.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/cancel.png"))); // NOI18N
+        jLabel59.setToolTipText("");
+        jPanel9.add(jLabel59);
+        jLabel59.setBounds(280, 430, 121, 40);
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/black1926.jpg"))); // NOI18N
         jLabel22.setToolTipText("");
         jPanel9.add(jLabel22);
-        jLabel22.setBounds(0, 0, 530, 300);
+        jLabel22.setBounds(0, 0, 530, 500);
 
         javax.swing.GroupLayout EditOrderLayout = new javax.swing.GroupLayout(EditOrder.getContentPane());
         EditOrder.getContentPane().setLayout(EditOrderLayout);
@@ -303,14 +659,40 @@ public class Home extends javax.swing.JFrame {
         );
         EditOrderLayout.setVerticalGroup(
             EditOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(EditOrderLayout.createSequentialGroup()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel10.setLayout(null);
 
+        jLabel53.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 30)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(51, 255, 0));
+        jLabel53.setText("Select Order");
+        jPanel10.add(jLabel53);
+        jLabel53.setBounds(100, 120, 170, 30);
+
+        DeleteselectDish1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        DeleteselectDish1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteselectDish1ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(DeleteselectDish1);
+        DeleteselectDish1.setBounds(270, 120, 140, 30);
+
+        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/accept.png"))); // NOI18N
+        jPanel10.add(jLabel61);
+        jLabel61.setBounds(120, 180, 130, 40);
+
+        jLabel62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/cancel.png"))); // NOI18N
+        jLabel62.setToolTipText("");
+        jPanel10.add(jLabel62);
+        jLabel62.setBounds(270, 180, 121, 40);
+
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/Top5.png"))); // NOI18N
         jPanel10.add(jLabel23);
-        jLabel23.setBounds(0, 10, 530, 80);
+        jLabel23.setBounds(0, 20, 530, 80);
 
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/black1926.jpg"))); // NOI18N
         jLabel24.setToolTipText("");
@@ -334,11 +716,32 @@ public class Home extends javax.swing.JFrame {
         jLabel25.setLabelFor(AddIngre);
         jPanel11.add(jLabel25);
         jLabel25.setBounds(20, 20, 580, 80);
+        jPanel11.add(tf_ingName);
+        tf_ingName.setBounds(220, 140, 210, 30);
+        jPanel11.add(tf_ingDesc);
+        tf_ingDesc.setBounds(220, 180, 210, 30);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconDesc.png"))); // NOI18N
+        jPanel11.add(jLabel9);
+        jLabel9.setBounds(70, 180, 140, 30);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconName.png"))); // NOI18N
+        jPanel11.add(jLabel10);
+        jLabel10.setBounds(130, 140, 80, 29);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/cancel.png"))); // NOI18N
+        jLabel5.setToolTipText("");
+        jPanel11.add(jLabel5);
+        jLabel5.setBounds(280, 240, 121, 40);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/accept.png"))); // NOI18N
+        jPanel11.add(jLabel8);
+        jLabel8.setBounds(130, 240, 130, 40);
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/black1926.jpg"))); // NOI18N
         jLabel26.setToolTipText("");
         jPanel11.add(jLabel26);
-        jLabel26.setBounds(0, 0, 530, 300);
+        jLabel26.setBounds(0, 0, 530, 320);
 
         javax.swing.GroupLayout NewIngredientLayout = new javax.swing.GroupLayout(NewIngredient.getContentPane());
         NewIngredient.getContentPane().setLayout(NewIngredientLayout);
@@ -348,7 +751,9 @@ public class Home extends javax.swing.JFrame {
         );
         NewIngredientLayout.setVerticalGroup(
             NewIngredientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(NewIngredientLayout.createSequentialGroup()
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -491,6 +896,7 @@ public class Home extends javax.swing.JFrame {
         DeleteOrder.setVisible(true);
     }//GEN-LAST:event_deleteOrderMouseClicked
 
+<<<<<<< HEAD
     private void AgregarIngrediente(java.awt.event.MouseEvent evt){
         ingredientes.push(new Ingridient("String","String2"));
     }
@@ -498,6 +904,20 @@ public class Home extends javax.swing.JFrame {
     
   
     
+=======
+    private void DeleteselectDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteselectDishActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteselectDishActionPerformed
+
+    private void EditselectOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditselectOrderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditselectOrderActionPerformed
+
+    private void DeleteselectDish1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteselectDish1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteselectDish1ActionPerformed
+
+>>>>>>> e50704584551fb60415aaf501b7039ca128ff42e
     /**
      * @param args the command line arguments
      */
@@ -539,19 +959,35 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JDialog AddOrder;
     private javax.swing.JDialog DeleteDish;
     private javax.swing.JDialog DeleteOrder;
+    private javax.swing.JComboBox DeleteselectDish;
+    private javax.swing.JComboBox DeleteselectDish1;
+    private javax.swing.JScrollPane Dish_tableIngredients;
     private javax.swing.JDialog EditDish;
     private javax.swing.JLabel EditIngre;
     private javax.swing.JDialog EditOrder;
+    private javax.swing.JComboBox Editingredients_dish;
+    private javax.swing.JComboBox EditselectDish;
+    private javax.swing.JComboBox EditselectOrder;
+    private javax.swing.JSpinner Editsp_pricedish;
+    private javax.swing.JSpinner Editsp_timedish;
+    private javax.swing.JTextField Edittf_Desc;
+    private javax.swing.JTextField Edittf_dishName;
     private javax.swing.JDialog Menu;
     private javax.swing.JDialog NewIngredient;
     private javax.swing.JDialog Order;
+    private javax.swing.JComboBox Order_addDish;
+    private javax.swing.JComboBox Order_remDish;
     private javax.swing.JLabel RemoveIngre;
     private javax.swing.JLabel cellar;
     private javax.swing.JLabel deleteOrder;
     private javax.swing.JLabel editOrder;
     private javax.swing.JLabel food;
+    private javax.swing.JComboBox ingredients_dish;
+    private javax.swing.JComboBox ingredients_dish1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -560,17 +996,55 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -581,9 +1055,27 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     private javax.swing.JLabel menu;
     private javax.swing.JLabel meramera;
     private javax.swing.JLabel newOrder;
     private javax.swing.JLabel order;
+    private javax.swing.JSpinner sp_pricedish;
+    private javax.swing.JSpinner sp_pricedish1;
+    private javax.swing.JSpinner sp_pricedish2;
+    private javax.swing.JSpinner sp_timedish;
+    private javax.swing.JSpinner sp_timedish1;
+    private javax.swing.JSpinner sp_timedish2;
+    private javax.swing.JTextField tf_clientOrderE;
+    private javax.swing.JTextField tf_dishName;
+    private javax.swing.JTextField tf_dishName1;
+    private javax.swing.JTextField tf_inameDesc;
+    private javax.swing.JTextField tf_inameDesc1;
+    private javax.swing.JTextField tf_ingDesc;
+    private javax.swing.JTextField tf_ingName;
     // End of variables declaration//GEN-END:variables
 }

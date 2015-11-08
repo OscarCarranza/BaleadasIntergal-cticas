@@ -8,12 +8,14 @@ public class Dish {
     
     private String name;
     private String description;
+    private double price;
     private Time time;
     private ArrayList ingridients;
 
-    public Dish(String name, String description, Time time, ArrayList ingridients) {
+    public Dish(String name, String description, double price, Time time, ArrayList ingridients) {
         this.name = name;
         this.description = description;
+        this.price = price;
         this.time = time;
         this.ingridients = ingridients;
     }
@@ -34,6 +36,14 @@ public class Dish {
         this.description = description;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public Time getTime() {
         return time;
     }
@@ -51,4 +61,5 @@ public class Dish {
     }
     
     
+
 }
