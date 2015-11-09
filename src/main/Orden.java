@@ -10,9 +10,9 @@ public class Orden {
     private String client;
     private ArrayList <Dish> orders;
     private double total;
-    private Time time;
+    private long time;
 
-    public Orden(int order_number, String client, ArrayList<Dish> orders, double total, Time time) {
+    public Orden(int order_number, String client, ArrayList<Dish> orders, double total, long time) {
         this.order_number = order_number;
         this.client = client;
         this.orders = orders;
@@ -52,12 +52,17 @@ public class Orden {
         this.total = total;
     }
 
-    public Time getTime() {
+    public long getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(long time) {
         this.time = time;
+    }
+
+    @Override
+    public String toString() {
+        return "{" + "#" + order_number + '}';
     }
     
     
