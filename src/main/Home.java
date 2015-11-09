@@ -13,12 +13,21 @@ import java.util.ArrayList;
  * @author Oscar
  */
 public class Home extends javax.swing.JFrame {
+<<<<<<< HEAD
     LinkedList cocineros = new LinkedList();
     AdvancedLinkedList dishes = new AdvancedLinkedList();
     Pila ingredientes = new Pila();
     Pila ingredientestemp = new Pila();
     Cola ordenes = new Cola();
     int sizeofdishlist=0;
+=======
+    AdvancedLinkedList cocineros = new AdvancedLinkedList();
+    Pila ingredientes = new Pila();
+    Cola ordenes = new Cola();
+    
+    
+    
+>>>>>>> 916f4d99c1d12540cdb25bee5fa42480ebc02e37
     /**
      * Creates new form Home
      */
@@ -34,6 +43,11 @@ public class Home extends javax.swing.JFrame {
         Editingredients_dish.removeAllItems();
         EditselectOrder.removeAllItems();
         System.out.println("HELLO");
+        cocineros.insert(new Cocineros());
+        cocineros.insert(new Cocineros());
+        cocineros.insert(new Cocineros());
+        cocineros.insert(new Cocineros());
+        
         this.setLocationRelativeTo(null);
         cocineros.insert(new Cocineros());
         cocineros.insert(new Cocineros());
@@ -846,7 +860,7 @@ public class Home extends javax.swing.JFrame {
         meramera.setForeground(new java.awt.Color(255, 255, 255));
         meramera.setText("La Mera Mera ");
         jPanel1.add(meramera);
-        meramera.setBounds(320, 40, 260, 42);
+        meramera.setBounds(320, 40, 260, 43);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/links.png"))); // NOI18N
         jPanel1.add(jLabel4);
@@ -898,13 +912,16 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuMouseClicked
 
     private void AddIngreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddIngreMouseClicked
+        System.out.println("New Dish Button");        
         AddDish.pack();
         AddDish.setModal(true);
         AddDish.setLocationRelativeTo(null);
         AddDish.setVisible(true);
+        
     }//GEN-LAST:event_AddIngreMouseClicked
 
     private void EditIngreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditIngreMouseClicked
+        System.out.println("Edit Dish Button");
         EditDish.pack();
         EditDish.setModal(true);
         EditDish.setLocationRelativeTo(null);
@@ -912,6 +929,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_EditIngreMouseClicked
 
     private void RemoveIngreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RemoveIngreMouseClicked
+        System.out.println("Delete Dish Button");
         DeleteDish.pack();
         DeleteDish.setModal(true);
         DeleteDish.setLocationRelativeTo(null);
@@ -939,6 +957,7 @@ public class Home extends javax.swing.JFrame {
         DeleteOrder.setVisible(true);
     }//GEN-LAST:event_deleteOrderMouseClicked
 
+<<<<<<< HEAD
     private void DeleteselectDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteselectDishActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DeleteselectDishActionPerformed
@@ -1046,6 +1065,15 @@ public class Home extends javax.swing.JFrame {
         
     }
     
+=======
+    private void AgregarIngrediente(java.awt.event.MouseEvent evt){
+        ingredientes.push(new Ingridient("String","String2"));
+    }
+    
+    
+  
+    
+>>>>>>> 916f4d99c1d12540cdb25bee5fa42480ebc02e37
     /**
      * @param args the command line arguments
      */
