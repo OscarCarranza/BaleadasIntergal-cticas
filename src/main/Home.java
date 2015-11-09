@@ -13,21 +13,15 @@ import java.util.ArrayList;
  * @author Oscar
  */
 public class Home extends javax.swing.JFrame {
-<<<<<<< HEAD
     LinkedList cocineros = new LinkedList();
     AdvancedLinkedList dishes = new AdvancedLinkedList();
     Pila ingredientes = new Pila();
     Pila ingredientestemp = new Pila();
     Cola ordenes = new Cola();
     int sizeofdishlist=0;
-=======
-    AdvancedLinkedList cocineros = new AdvancedLinkedList();
-    Pila ingredientes = new Pila();
-    Cola ordenes = new Cola();
     
     
     
->>>>>>> 916f4d99c1d12540cdb25bee5fa42480ebc02e37
     /**
      * Creates new form Home
      */
@@ -957,7 +951,6 @@ public class Home extends javax.swing.JFrame {
         DeleteOrder.setVisible(true);
     }//GEN-LAST:event_deleteOrderMouseClicked
 
-<<<<<<< HEAD
     private void DeleteselectDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteselectDishActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DeleteselectDishActionPerformed
@@ -972,15 +965,20 @@ public class Home extends javax.swing.JFrame {
 
      private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {                                    
          System.out.println("ESTE ES PARA AGREGAR DISH");
-         EditselectDish.addItem(tf_dishName.getText());
-         DeleteselectDish.addItem(tf_dishName.getText());
-         Order_addDish.addItem(tf_dishName.getText());
-         Order_remDish.addItem(tf_dishName.getText());
-         ingredients_dish1.addItem(tf_dishName.getText());
+         //EditselectDish.addItem(tf_dishName.getText());
+         //DeleteselectDish.addItem(tf_dishName.getText());
+         //Order_addDish.addItem(tf_dishName.getText());
+         //Order_remDish.addItem(tf_dishName.getText());
+         //ingredients_dish1.addItem(tf_dishName.getText());
          ArrayList<Ingridient> ingredientesplatos = new ArrayList<Ingridient>();
          ingredientesplatos.add((Ingridient)ingredients_dish.getSelectedItem());
          //ingredientesplatos.add((Ingridient)ingredients_dish);
          Dish dish = new Dish (tf_dishName.getText(),tf_inameDesc.getText(),(double)(Integer) sp_pricedish.getValue(),(Integer) sp_timedish.getValue(),ingredientesplatos);
+         EditselectDish.addItem(dish);
+         DeleteselectDish.addItem(dish);
+         Order_addDish.addItem(dish);
+         Order_remDish.addItem(dish);
+         ingredients_dish1.addItem(dish);
          dishes.insert(dish, sizeofdishlist);
          sizeofdishlist++;
          
@@ -1042,6 +1040,7 @@ public class Home extends javax.swing.JFrame {
         System.out.println("ESTE ES PARA AGREGAR NEW ORDER 48");
         ArrayList<Dish> dishesorders = new ArrayList<Dish>();
         dishesorders.add((Dish) ingredients_dish1.getSelectedItem());
+        //dishesorders.add();
         Orden orden = new Orden(Integer.parseInt(tf_dishName1.getText()),tf_inameDesc1.getText(),dishesorders,(double)(Integer)sp_pricedish1.getValue(),(Integer)sp_timedish1.getValue());
         ordenes.Queue(orden);
         DeleteselectDish1.addItem(orden);
@@ -1065,7 +1064,6 @@ public class Home extends javax.swing.JFrame {
         
     }
     
-=======
     private void AgregarIngrediente(java.awt.event.MouseEvent evt){
         ingredientes.push(new Ingridient("String","String2"));
     }
@@ -1073,7 +1071,6 @@ public class Home extends javax.swing.JFrame {
     
   
     
->>>>>>> 916f4d99c1d12540cdb25bee5fa42480ebc02e37
     /**
      * @param args the command line arguments
      */
