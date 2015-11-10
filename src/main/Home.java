@@ -5,8 +5,8 @@
  */
 package main;
 
-import java.sql.Time;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,7 +17,10 @@ public class Home extends javax.swing.JFrame {
     AdvancedLinkedList dishes = new AdvancedLinkedList();
     Pila ingredientes = new Pila();
     Pila ingredientestemp = new Pila();
+    ArrayList<Ingridient> ingredientesplatos = new ArrayList();
+    ArrayList<Dish> dishesorders = new ArrayList<Dish>();
     Cola ordenes = new Cola();
+    Cola ordenes2 = new Cola();
     int sizeofdishlist=0;
     
     
@@ -29,11 +32,11 @@ public class Home extends javax.swing.JFrame {
         initComponents();
         EditselectDish.removeAllItems();
         DeleteselectDish.removeAllItems();
-        DeleteselectDish1.removeAllItems(); //DELETE ORDER COMBO BOX
+        DeleteselectOrder.removeAllItems(); //DELETE ORDER COMBO BOX
         Order_addDish.removeAllItems();
         Order_remDish.removeAllItems();
         ingredients_dish.removeAllItems();
-        ingredients_dish1.removeAllItems(); //NEW ORDER ADD DISH COMBO BOX
+        order_dishes.removeAllItems(); //NEW ORDER ADD DISH COMBO BOX
         Editingredients_dish.removeAllItems();
         EditselectOrder.removeAllItems();
         System.out.println("HELLO");
@@ -54,7 +57,7 @@ public class Home extends javax.swing.JFrame {
         });
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                AgregarIngredienteMouseClicked(evt);
             }
         });
         jLabel34.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -123,6 +126,7 @@ public class Home extends javax.swing.JFrame {
         sp_timedish = new javax.swing.JSpinner();
         jLabel32 = new javax.swing.JLabel();
         sp_pricedish = new javax.swing.JSpinner();
+        addIngDish = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         EditDish = new javax.swing.JDialog();
         jPanel6 = new javax.swing.JPanel();
@@ -131,7 +135,7 @@ public class Home extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         Dish_tableIngredients = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        TableIng = new javax.swing.JTable();
         EditselectDish = new javax.swing.JComboBox();
         Editingredients_dish = new javax.swing.JComboBox();
         Editsp_timedish = new javax.swing.JSpinner();
@@ -155,20 +159,24 @@ public class Home extends javax.swing.JFrame {
         AddOrder = new javax.swing.JDialog();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        table_newOrder2 = new javax.swing.JTable();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
         tf_inameDesc1 = new javax.swing.JTextField();
         tf_dishName1 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        sp_timedish1 = new javax.swing.JSpinner();
-        sp_pricedish1 = new javax.swing.JSpinner();
+        time_order = new javax.swing.JSpinner();
         jLabel43 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
-        ingredients_dish1 = new javax.swing.JComboBox();
+        order_dishes = new javax.swing.JComboBox();
         jLabel48 = new javax.swing.JLabel();
+        total = new javax.swing.JTextField();
         jLabel49 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        sp_cocineros = new javax.swing.JSpinner();
+        AddChef = new javax.swing.JLabel();
+        agregarOrden = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         EditOrder = new javax.swing.JDialog();
         jPanel9 = new javax.swing.JPanel();
@@ -178,22 +186,22 @@ public class Home extends javax.swing.JFrame {
         EditselectOrder = new javax.swing.JComboBox();
         jLabel21 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
-        tf_clientOrderE = new javax.swing.JTextField();
+        tf_clientOrder = new javax.swing.JTextField();
         jLabel55 = new javax.swing.JLabel();
         Order_addDish = new javax.swing.JComboBox();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        table_newOrder = new javax.swing.JTable();
         jLabel56 = new javax.swing.JLabel();
-        sp_pricedish2 = new javax.swing.JSpinner();
         jLabel57 = new javax.swing.JLabel();
-        sp_timedish2 = new javax.swing.JSpinner();
+        time_order2 = new javax.swing.JSpinner();
+        total2 = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         DeleteOrder = new javax.swing.JDialog();
         jPanel10 = new javax.swing.JPanel();
         jLabel53 = new javax.swing.JLabel();
-        DeleteselectDish1 = new javax.swing.JComboBox();
+        DeleteselectOrder = new javax.swing.JComboBox();
         jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -208,6 +216,9 @@ public class Home extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
+        Cocineros = new javax.swing.JDialog();
+        jLabel20 = new javax.swing.JLabel();
+        jScrollBar1 = new javax.swing.JScrollBar();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         cellar = new javax.swing.JLabel();
@@ -355,6 +366,11 @@ public class Home extends javax.swing.JFrame {
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/cancel.png"))); // NOI18N
         jLabel29.setToolTipText("");
+        jLabel29.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel29MouseClicked(evt);
+            }
+        });
         jPanel5.add(jLabel29);
         jLabel29.setBounds(280, 350, 121, 40);
 
@@ -369,6 +385,16 @@ public class Home extends javax.swing.JFrame {
         jLabel32.setBounds(140, 210, 69, 30);
         jPanel5.add(sp_pricedish);
         sp_pricedish.setBounds(220, 210, 110, 30);
+
+        addIngDish.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/plus.png"))); // NOI18N
+        addIngDish.setText("jLabel64");
+        addIngDish.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addIngDishMouseClicked(evt);
+            }
+        });
+        jPanel5.add(addIngDish);
+        addIngDish.setBounds(450, 290, 30, 29);
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/black1926.jpg"))); // NOI18N
         jLabel13.setToolTipText("");
@@ -396,6 +422,11 @@ public class Home extends javax.swing.JFrame {
 
         jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/cancel.png"))); // NOI18N
         jLabel33.setToolTipText("");
+        jLabel33.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel33MouseClicked(evt);
+            }
+        });
         jPanel6.add(jLabel33);
         jLabel33.setBounds(280, 460, 121, 40);
 
@@ -407,7 +438,7 @@ public class Home extends javax.swing.JFrame {
         jPanel6.add(jLabel35);
         jLabel35.setBounds(90, 310, 140, 29);
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        TableIng.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -423,7 +454,7 @@ public class Home extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        Dish_tableIngredients.setViewportView(jTable3);
+        Dish_tableIngredients.setViewportView(TableIng);
 
         jPanel6.add(Dish_tableIngredients);
         Dish_tableIngredients.setBounds(90, 350, 360, 80);
@@ -496,6 +527,11 @@ public class Home extends javax.swing.JFrame {
 
         jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/cancel.png"))); // NOI18N
         jLabel45.setToolTipText("");
+        jLabel45.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel45MouseClicked(evt);
+            }
+        });
         jPanel7.add(jLabel45);
         jLabel45.setBounds(270, 180, 121, 40);
 
@@ -532,7 +568,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel8.setLayout(null);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        table_newOrder2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -548,10 +584,10 @@ public class Home extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(table_newOrder2);
 
         jPanel8.add(jScrollPane1);
-        jScrollPane1.setBounds(70, 240, 390, 90);
+        jScrollPane1.setBounds(80, 290, 390, 90);
 
         jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconNumber.png"))); // NOI18N
         jPanel8.add(jLabel50);
@@ -568,14 +604,12 @@ public class Home extends javax.swing.JFrame {
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/Top4.png"))); // NOI18N
         jPanel8.add(jLabel19);
         jLabel19.setBounds(0, 20, 520, 80);
-        jPanel8.add(sp_timedish1);
-        sp_timedish1.setBounds(360, 340, 70, 30);
-        jPanel8.add(sp_pricedish1);
-        sp_pricedish1.setBounds(190, 340, 70, 30);
+        jPanel8.add(time_order);
+        time_order.setBounds(350, 390, 70, 30);
 
         jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconTotal.png"))); // NOI18N
         jPanel8.add(jLabel43);
-        jLabel43.setBounds(100, 340, 80, 30);
+        jLabel43.setBounds(100, 390, 80, 30);
 
         jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/dish.png"))); // NOI18N
         jPanel8.add(jLabel47);
@@ -583,20 +617,46 @@ public class Home extends javax.swing.JFrame {
 
         jLabel52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconTime.png"))); // NOI18N
         jPanel8.add(jLabel52);
-        jLabel52.setBounds(290, 340, 60, 30);
+        jLabel52.setBounds(280, 390, 60, 30);
 
-        ingredients_dish1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel8.add(ingredients_dish1);
-        ingredients_dish1.setBounds(220, 200, 210, 30);
+        order_dishes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel8.add(order_dishes);
+        order_dishes.setBounds(220, 200, 210, 30);
 
         jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/accept.png"))); // NOI18N
         jPanel8.add(jLabel48);
-        jLabel48.setBounds(130, 410, 130, 40);
+        jLabel48.setBounds(90, 440, 130, 40);
+        jPanel8.add(total);
+        total.setBounds(190, 390, 80, 30);
 
         jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/cancel.png"))); // NOI18N
         jLabel49.setToolTipText("");
+        jLabel49.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel49MouseClicked(evt);
+            }
+        });
         jPanel8.add(jLabel49);
-        jLabel49.setBounds(280, 410, 121, 40);
+        jLabel49.setBounds(320, 440, 121, 40);
+
+        jLabel63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/AssignedChefs.png"))); // NOI18N
+        jLabel63.setText("jLabel63");
+        jPanel8.add(jLabel63);
+        jLabel63.setBounds(40, 240, 170, 29);
+        jPanel8.add(sp_cocineros);
+        sp_cocineros.setBounds(220, 240, 80, 28);
+        jPanel8.add(AddChef);
+        AddChef.setBounds(320, 250, 0, 0);
+
+        agregarOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/plus.png"))); // NOI18N
+        agregarOrden.setText("jLabel64");
+        agregarOrden.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregarOrdenMouseClicked(evt);
+            }
+        });
+        jPanel8.add(agregarOrden);
+        agregarOrden.setBounds(440, 200, 30, 29);
 
         jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/black1926.jpg"))); // NOI18N
         jLabel41.setToolTipText("");
@@ -648,8 +708,8 @@ public class Home extends javax.swing.JFrame {
         jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconClient.png"))); // NOI18N
         jPanel9.add(jLabel54);
         jLabel54.setBounds(130, 150, 80, 30);
-        jPanel9.add(tf_clientOrderE);
-        tf_clientOrderE.setBounds(220, 150, 210, 30);
+        jPanel9.add(tf_clientOrder);
+        tf_clientOrder.setBounds(220, 150, 210, 30);
 
         jLabel55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/dish.png"))); // NOI18N
         jPanel9.add(jLabel55);
@@ -659,7 +719,7 @@ public class Home extends javax.swing.JFrame {
         jPanel9.add(Order_addDish);
         Order_addDish.setBounds(220, 190, 210, 30);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        table_newOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -675,7 +735,7 @@ public class Home extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(table_newOrder);
 
         jPanel9.add(jScrollPane2);
         jScrollPane2.setBounds(70, 280, 390, 90);
@@ -683,14 +743,21 @@ public class Home extends javax.swing.JFrame {
         jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconTotal.png"))); // NOI18N
         jPanel9.add(jLabel56);
         jLabel56.setBounds(100, 380, 80, 30);
-        jPanel9.add(sp_pricedish2);
-        sp_pricedish2.setBounds(190, 380, 70, 30);
 
         jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/iconTime.png"))); // NOI18N
         jPanel9.add(jLabel57);
         jLabel57.setBounds(290, 380, 60, 30);
-        jPanel9.add(sp_timedish2);
-        sp_timedish2.setBounds(360, 380, 70, 30);
+        jPanel9.add(time_order2);
+        time_order2.setBounds(360, 380, 70, 30);
+
+        total2.setText("jTextField1");
+        total2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                total2ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(total2);
+        total2.setBounds(190, 380, 86, 30);
 
         jLabel58.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/accept.png"))); // NOI18N
         jPanel9.add(jLabel58);
@@ -698,6 +765,11 @@ public class Home extends javax.swing.JFrame {
 
         jLabel59.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/cancel.png"))); // NOI18N
         jLabel59.setToolTipText("");
+        jLabel59.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel59MouseClicked(evt);
+            }
+        });
         jPanel9.add(jLabel59);
         jLabel59.setBounds(280, 430, 121, 40);
 
@@ -727,14 +799,14 @@ public class Home extends javax.swing.JFrame {
         jPanel10.add(jLabel53);
         jLabel53.setBounds(100, 120, 170, 30);
 
-        DeleteselectDish1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        DeleteselectDish1.addActionListener(new java.awt.event.ActionListener() {
+        DeleteselectOrder.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        DeleteselectOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteselectDish1ActionPerformed(evt);
+                DeleteselectOrderActionPerformed(evt);
             }
         });
-        jPanel10.add(DeleteselectDish1);
-        DeleteselectDish1.setBounds(270, 120, 140, 30);
+        jPanel10.add(DeleteselectOrder);
+        DeleteselectOrder.setBounds(270, 120, 140, 30);
 
         jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/accept.png"))); // NOI18N
         jPanel10.add(jLabel61);
@@ -742,6 +814,11 @@ public class Home extends javax.swing.JFrame {
 
         jLabel62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/cancel.png"))); // NOI18N
         jLabel62.setToolTipText("");
+        jLabel62.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel62MouseClicked(evt);
+            }
+        });
         jPanel10.add(jLabel62);
         jLabel62.setBounds(270, 180, 121, 40);
 
@@ -786,10 +863,20 @@ public class Home extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/cancel.png"))); // NOI18N
         jLabel5.setToolTipText("");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
         jPanel11.add(jLabel5);
         jLabel5.setBounds(280, 240, 121, 40);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/accept.png"))); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
         jPanel11.add(jLabel8);
         jLabel8.setBounds(130, 240, 130, 40);
 
@@ -810,6 +897,20 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        javax.swing.GroupLayout CocinerosLayout = new javax.swing.GroupLayout(Cocineros.getContentPane());
+        Cocineros.getContentPane().setLayout(CocinerosLayout);
+        CocinerosLayout.setHorizontalGroup(
+            CocinerosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2560, Short.MAX_VALUE)
+        );
+        CocinerosLayout.setVerticalGroup(
+            CocinerosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1600, Short.MAX_VALUE)
+        );
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/black1926.jpg"))); // NOI18N
+        jLabel20.setToolTipText("");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -959,9 +1060,84 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_EditselectOrderActionPerformed
 
-    private void DeleteselectDish1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteselectDish1ActionPerformed
+    private void DeleteselectOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteselectOrderActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DeleteselectDish1ActionPerformed
+    }//GEN-LAST:event_DeleteselectOrderActionPerformed
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        NewIngredient.setVisible(false);
+        tf_ingName.setText("");
+        tf_ingDesc.setText("");
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel29MouseClicked
+        AddDish.setVisible(false);
+        tf_ingName.setText("");
+        tf_ingDesc.setText("");
+        sp_pricedish.setValue(0);
+        sp_timedish.setValue(0);
+        ingredients_dish.setSelectedIndex(0);
+    }//GEN-LAST:event_jLabel29MouseClicked
+
+    private void jLabel33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel33MouseClicked
+        EditDish.setVisible(false);
+        Edittf_dishName.setText("");
+        Edittf_Desc.setText("");
+        Editsp_pricedish.setValue(0);
+        Editsp_timedish.setValue(0);
+        Editingredients_dish.setSelectedIndex(0);
+        EditselectDish.setSelectedIndex(0);
+    }//GEN-LAST:event_jLabel33MouseClicked
+
+    private void jLabel45MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel45MouseClicked
+        DeleteDish.setVisible(false);
+        DeleteselectDish.setSelectedIndex(0);
+    }//GEN-LAST:event_jLabel45MouseClicked
+
+    private void jLabel49MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel49MouseClicked
+        tf_dishName1.setText("");
+        tf_inameDesc1.setText("");
+        order_dishes.setSelectedIndex(0);
+        total.setText("");
+        time_order.setValue(0);
+        
+        AddDish.setVisible(false);
+        
+        
+    }//GEN-LAST:event_jLabel49MouseClicked
+
+    private void jLabel59MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel59MouseClicked
+        EditselectOrder.setSelectedIndex(0);
+        tf_clientOrder.setText("");
+        Order_addDish.setSelectedIndex(0);
+        Order_remDish.setSelectedIndex(0);
+        total2.setText("");
+        time_order2.setValue(0);
+        EditDish.setVisible(false);
+    }//GEN-LAST:event_jLabel59MouseClicked
+
+    private void total2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_total2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_total2ActionPerformed
+
+    private void jLabel62MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel62MouseClicked
+        DeleteselectOrder.setSelectedIndex(0);
+        DeleteOrder.setVisible(false);
+    }//GEN-LAST:event_jLabel62MouseClicked
+
+    private void addIngDishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addIngDishMouseClicked
+        // TODO add your handling code here:
+        ingredientesplatos.add((Ingridient)ingredients_dish.getSelectedItem());
+    }//GEN-LAST:event_addIngDishMouseClicked
+
+    private void agregarOrdenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarOrdenMouseClicked
+        // TODO add your handling code here:
+        dishesorders.add((Dish) order_dishes.getSelectedItem());
+    }//GEN-LAST:event_agregarOrdenMouseClicked
 
      private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {                                    
          System.out.println("ESTE ES PARA AGREGAR DISH");
@@ -970,27 +1146,49 @@ public class Home extends javax.swing.JFrame {
          //Order_addDish.addItem(tf_dishName.getText());
          //Order_remDish.addItem(tf_dishName.getText());
          //ingredients_dish1.addItem(tf_dishName.getText());
-         ArrayList<Ingridient> ingredientesplatos = new ArrayList<Ingridient>();
-         ingredientesplatos.add((Ingridient)ingredients_dish.getSelectedItem());
+         //ArrayList<Ingridient> ingredientesplatos = new ArrayList<Ingridient>();
+         //ingredientesplatos.add((Ingridient)ingredients_dish.getSelectedItem());
          //ingredientesplatos.add((Ingridient)ingredients_dish);
          Dish dish = new Dish (tf_dishName.getText(),tf_inameDesc.getText(),(double)(Integer) sp_pricedish.getValue(),(Integer) sp_timedish.getValue(),ingredientesplatos);
          EditselectDish.addItem(dish);
          DeleteselectDish.addItem(dish);
          Order_addDish.addItem(dish);
          Order_remDish.addItem(dish);
-         ingredients_dish1.addItem(dish);
+         order_dishes.addItem(dish);
          dishes.insert(dish, sizeofdishlist);
+         ingredientesplatos.clear();
          sizeofdishlist++;
+         
+         table_newOrder.removeAll();
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo = (DefaultTableModel)table_newOrder.getModel();
+        //modelo.addRow(dish.getName() , dish.getDescription());
+        table_newOrder.setModel(modelo);
+        
+        table_newOrder2.removeAll();
+        DefaultTableModel modelo2 = new DefaultTableModel();
+        modelo2 = (DefaultTableModel)table_newOrder.getModel();
+        //modelo2.addRow(dish.getName() , dish.getDescription());
+        table_newOrder2.setModel(modelo);
+        
+        
          
     }
      
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {                                    
+    private void AgregarIngredienteMouseClicked(java.awt.event.MouseEvent evt) {                                    
         System.out.println("ESTE ES PARA AGREGAR INGREDIENTE 8");
         Ingridient ingrediente = new Ingridient(tf_ingName.getText(),tf_ingDesc.getText());
         ingredientes.push(ingrediente);
         ingredients_dish.addItem(ingrediente);
         //ingredients_dish1.addItem(ingrediente);
         Editingredients_dish.addItem(ingrediente);
+        //TableIng
+        
+         TableIng.removeAll();
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo = (DefaultTableModel)table_newOrder.getModel();
+        //modelo.addRow(dish.getName() , dish.getDescription());
+        TableIng.setModel(modelo);
     }
     private void jLabel34MouseClicked(java.awt.event.MouseEvent evt) {       
         /*  private javax.swing.JComboBox Editingredients_dish;
@@ -1007,7 +1205,7 @@ public class Home extends javax.swing.JFrame {
         dish.setDescription(Edittf_Desc.getText());
         dish.setPrice((double)(Integer) Editsp_pricedish.getValue());
         dish.setTime((Integer)Editsp_timedish.getValue());
-        ArrayList<Ingridient> ingredientesplatos = new ArrayList<Ingridient>();
+        //ArrayList<Ingridient> ingredientesplatos = new ArrayList<Ingridient>();
         ingredientesplatos.add((Ingridient)Editingredients_dish.getSelectedItem());
         dish.setIngridients(ingredientesplatos);
         dishes.insert(dish, EditselectDish.getSelectedIndex());
@@ -1015,8 +1213,9 @@ public class Home extends javax.swing.JFrame {
         DeleteselectDish.removeAllItems();
         Order_addDish.removeAllItems();
         Order_remDish.removeAllItems();
-        ingredients_dish1.removeAllItems();
+        order_dishes.removeAllItems();
         dish.setName(Edittf_dishName.getText());
+        dish.getIngridients().set(Editingredients_dish.getSelectedIndex(),Editingredients_dish.getSelectedItem());
         for (int i = 0; i < sizeofdishlist; i++) {
             System.out.println(dishes.toString(i));
             System.out.println(Edittf_dishName.getText());
@@ -1024,7 +1223,7 @@ public class Home extends javax.swing.JFrame {
             DeleteselectDish.addItem(dishes.toString(i));
             Order_addDish.addItem(dishes.toString(i));
             Order_remDish.addItem(dishes.toString(i));
-            ingredients_dish1.addItem(dishes.toString(i));
+            order_dishes.addItem(dishes.toString(i));
         }
        
         
@@ -1038,36 +1237,57 @@ public class Home extends javax.swing.JFrame {
     }
     private void jLabel48MouseClicked(java.awt.event.MouseEvent evt) {                                    
         System.out.println("ESTE ES PARA AGREGAR NEW ORDER 48");
-        ArrayList<Dish> dishesorders = new ArrayList<Dish>();
-        dishesorders.add((Dish) ingredients_dish1.getSelectedItem());
+        //ArrayList<Dish> dishesorders = new ArrayList<Dish>();
+        //dishesorders.add((Dish) order_dishes.getSelectedItem());
         //dishesorders.add();
-        Orden orden = new Orden(Integer.parseInt(tf_dishName1.getText()),tf_inameDesc1.getText(),dishesorders,(double)(Integer)sp_pricedish1.getValue(),(Integer)sp_timedish1.getValue());
-        ordenes.Queue(orden);
-        DeleteselectDish1.addItem(orden);
-        EditselectOrder.addItem(orden);
         
-        System.out.println("dishname1 "+tf_dishName1.getText());
-        System.out.println("inamedesc1"+tf_inameDesc1.getText());
-        System.out.println("clienteorderE"+tf_clientOrderE.getText());
+        Orden orden = new Orden(Integer.parseInt(tf_dishName1.getText()),tf_inameDesc1.getText(),dishesorders,(double)Integer.parseInt(total.getText()),(Integer)time_order.getValue());
+        ordenes.Queue(orden);
+        DeleteselectOrder.addItem(orden);
+        EditselectOrder.addItem(orden);
+        dishesorders.clear();
+        //System.out.println("dishname1 "+tf_dishName1.getText());
+        //System.out.println("inamedesc1"+tf_inameDesc1.getText());
+        //System.out.println("clienteorderE"+tf_clientOrder.getText());
         
     }
     private void jLabel58MouseClicked(java.awt.event.MouseEvent evt) {                                    
         System.out.println("ESTE ES PARA EDIT ORDER 58");
-        ordenes.Unqueue();
+        EditselectOrder.removeItemAt(EditselectOrder.getSelectedIndex());
+        DeleteselectOrder.removeItemAt(EditselectOrder.getSelectedIndex());
+        for (int i = 0; i < ordenes.size(); i++) {
+            if(i!=EditselectOrder.getSelectedIndex()){        
+                ordenes2.Queue(ordenes.Unqueue());
+            }else if(i==EditselectOrder.getSelectedIndex()){
+                ordenes2.Queue(new Orden(Integer.parseInt(tf_dishName1.getText()),tf_clientOrder.getText(),dishesorders,(double)Integer.parseInt(total2.getText()),(Integer)time_order2.getValue()));
+                ordenes.Unqueue();
+                EditselectOrder.addItem(new Orden(Integer.parseInt(tf_dishName1.getText()),tf_clientOrder.getText(),dishesorders,(double)Integer.parseInt(total2.getText()),(Integer)time_order2.getValue()));
+                DeleteselectOrder.addItem(new Orden(Integer.parseInt(tf_dishName1.getText()),tf_clientOrder.getText(),dishesorders,(double)Integer.parseInt(total2.getText()),(Integer)time_order2.getValue()));
+            }
+            
+        }
         
+        for (int i = 0; i < ordenes2.size(); i++) {
+            ordenes.Queue(ordenes2.Unqueue());            
+        }
     }
     private void jLabel61MouseClicked(java.awt.event.MouseEvent evt) {                                    
         System.out.println("ESTE ES PARA DELETE ORDER 61");
-        ordenes.Unqueue();
-        EditselectOrder.removeItemAt(DeleteselectDish1.getSelectedIndex());
-        DeleteselectDish1.removeItemAt(DeleteselectDish1.getSelectedIndex());
+        
+        for (int i = 0; i < ordenes.size(); i++) {
+            if(i!=DeleteselectOrder.getSelectedIndex()){        
+                ordenes2.Queue(ordenes.Unqueue());
+            }
+        }
+        for (int i = 0; i < ordenes2.size(); i++) {
+            ordenes.Queue(ordenes2.Unqueue());
+        }
+        
+        EditselectOrder.removeItemAt(DeleteselectOrder.getSelectedIndex());
+        DeleteselectOrder.removeItemAt(DeleteselectOrder.getSelectedIndex());
         
     }
-    
-    private void AgregarIngrediente(java.awt.event.MouseEvent evt){
-        ingredientes.push(new Ingridient("String","String2"));
-    }
-    
+ 
     
   
     
@@ -1108,13 +1328,15 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AddChef;
     private javax.swing.JDialog AddDish;
     private javax.swing.JLabel AddIngre;
     private javax.swing.JDialog AddOrder;
+    private javax.swing.JDialog Cocineros;
     private javax.swing.JDialog DeleteDish;
     private javax.swing.JDialog DeleteOrder;
     private javax.swing.JComboBox DeleteselectDish;
-    private javax.swing.JComboBox DeleteselectDish1;
+    private javax.swing.JComboBox DeleteselectOrder;
     private javax.swing.JScrollPane Dish_tableIngredients;
     private javax.swing.JDialog EditDish;
     private javax.swing.JLabel EditIngre;
@@ -1132,12 +1354,14 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JComboBox Order_addDish;
     private javax.swing.JComboBox Order_remDish;
     private javax.swing.JLabel RemoveIngre;
+    private javax.swing.JTable TableIng;
+    private javax.swing.JLabel addIngDish;
+    private javax.swing.JLabel agregarOrden;
     private javax.swing.JLabel cellar;
     private javax.swing.JLabel deleteOrder;
     private javax.swing.JLabel editOrder;
     private javax.swing.JLabel food;
     private javax.swing.JComboBox ingredients_dish;
-    private javax.swing.JComboBox ingredients_dish1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1150,6 +1374,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -1196,6 +1421,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -1209,27 +1435,29 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JLabel menu;
     private javax.swing.JLabel meramera;
     private javax.swing.JLabel newOrder;
     private javax.swing.JLabel order;
+    private javax.swing.JComboBox order_dishes;
+    private javax.swing.JSpinner sp_cocineros;
     private javax.swing.JSpinner sp_pricedish;
-    private javax.swing.JSpinner sp_pricedish1;
-    private javax.swing.JSpinner sp_pricedish2;
     private javax.swing.JSpinner sp_timedish;
-    private javax.swing.JSpinner sp_timedish1;
-    private javax.swing.JSpinner sp_timedish2;
-    private javax.swing.JTextField tf_clientOrderE;
+    private javax.swing.JTable table_newOrder;
+    private javax.swing.JTable table_newOrder2;
+    private javax.swing.JTextField tf_clientOrder;
     private javax.swing.JTextField tf_dishName;
     private javax.swing.JTextField tf_dishName1;
     private javax.swing.JTextField tf_inameDesc;
     private javax.swing.JTextField tf_inameDesc1;
     private javax.swing.JTextField tf_ingDesc;
     private javax.swing.JTextField tf_ingName;
+    private javax.swing.JSpinner time_order;
+    private javax.swing.JSpinner time_order2;
+    private javax.swing.JTextField total;
+    private javax.swing.JTextField total2;
     // End of variables declaration//GEN-END:variables
 }

@@ -52,5 +52,34 @@ public class Cocineros {
         this.OrdenEnEjecucion = OrdenEnEjecucion;
     }
     
+    public void procesarOrden(Orden orden,Pila ingredientes1, long timeStamp, int numero) {
+
+		System.out.println("El Cocinero " + numero + 
+				" COMIENZA A PROCESAR LA COMPRA DEL CLIENTE " +  orden.getClient() + 
+				" EN EL TIEMPO: " + (System.currentTimeMillis() - timeStamp) / 1000	+
+				"seg");
+                
+                this.Ingredientes.push(ingredientes1.pop());
+
+		for (int i = 0; i < orden.getTime(); i++) { 
+				this.esperarXsegundos((int) orden.getTime()); 
+				System.out.println("Procesado orden " + (i + 1) +  
+				" ->Tiempo: " + (System.currentTimeMillis() - timeStamp) / 1000 + 
+				"seg");
+		}
+
+		/*System.out.println("La cajera " + this.nombre + " HA TERMINADO DE PROCESAR " + 
+				cliente.getNombre() + " EN EL TIEMPO: " + 
+				(System.currentTimeMillis() - timeStamp) / 1000 + "seg");
+                    */
+	}
     
+    private void esperarXsegundos(int segundos) {
+		try {
+			Thread.sleep(segundos * 1000);
+		} catch (InterruptedException ex) {
+			Thread.currentThread().interrupt();
+		}
+	}
+
 }
